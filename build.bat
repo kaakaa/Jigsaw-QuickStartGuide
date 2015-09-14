@@ -1,11 +1,8 @@
 @echo off
 
-mkdir mods mods\com.greetings mods\org.astro
+mkdir mods mods\com.greetings mods\com.socket mods\org.fastsocket
 
-javac -d mods\org.astro src\org.astro\module-info.java src\org.astro\org\astro\World.java
+javac -d mods -modulesourcepath src src\com.socket\com\socket\NetworkSocket.java src\com.socket\com\socket\spi\NetworkSocketProvider.java
+javac -d mods -modulesourcepath src src\org.fastsocket\org\fastsocket\FastNetworkSocketProvider.java
 javac -modulepath mods -d mods\com.greetings src\com.greetings\module-info.java src\com.greetings\com\greetings\Main.java
 
-mkdir mlib
-
-jar --create --archive=mlib\org.astro@1.0.jar --module-version=1.0 -C mods\org.astro .
-jar --create --archive=mlib\com.greetings.jar --main-class=com.greetings.Main -C mods\com.greetings .
