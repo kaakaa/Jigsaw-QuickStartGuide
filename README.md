@@ -2,4 +2,4 @@
 
 [Project Jigsaw: Quick Start Guide](http://openjdk.java.net/projects/jigsaw/quick-start "Project Jigsaw: Quick Start Guide")
 
-�ʌo�B
+写経。
